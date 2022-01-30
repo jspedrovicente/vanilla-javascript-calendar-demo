@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Logica de Programação Javascript</title>
+        <meta charset="utf-8">
+        <meta name="Author" content="José Pedro">
+        <meta name="Description" content="conteudo, inicio">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link href="../simple-calendar-date/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>Calendário Simples</h1>
+            <p class="name-creator">by: <a href="https://github.com/jspedrovicente">José Vicente :)</a></p>
+            
+        </header>
+        <div class="form-year-month">
+                <label for="start">Escolha o ano e o mês:</label>
+                <form>
+                <input type="month" id="start" name="start"
+                 min="1990-03" value="2022-01" onchange=ChangeDateResult(value)>
+            
+        </div>
+
+        <section class="section-info">   
+            <p class= "result">
+                Para começar, basta escolher um Ano e um Mês =)
+            </p>
+            <p class="days-month">
+            **ANDA LOGO**
+            </p>
+        </section>
+        
+        <section class= "section-calendar invisible">
+
+            <div class="calendar-title">Janeiro</div>
+            <div class="calendar-week">
+                <div class="calendar-week-days">Domingo</div>
+                <div class="calendar-week-days">Segunda</div>
+                <div class="calendar-week-days">Terça</div>
+                <div class="calendar-week-days">Quarta</div>
+                <div class="calendar-week-days">Quinta</div>
+                <div class="calendar-week-days">Sexta</div>
+                <div class="calendar-week-days">Sabado</div>
+
+            </div>
+            <div class="calendar-wrap">
+                <div class="calendar-day first-row">
+                    <div class="calendar-day-number1 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">                    
+                    <div class="calendar-day-number2 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number3 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number4 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number5 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number6 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number7 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day first-row">
+                    <div class="calendar-day-number8 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number9 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number10 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number11 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number12 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number13 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number14 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day first-row">
+                    <div class="calendar-day-number15 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number16 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number17 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number18 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number19 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number20 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number21 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day first-row">
+                    <div class="calendar-day-number22 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number23 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number24 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number25 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number26 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number27 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number28 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day first-row">
+                    <div class="calendar-day-number29 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number30 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number31 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number32 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number33 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number34 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number35 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day first-row last-line-first-row">
+                    <div class="calendar-day-number36 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number37 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number38 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number39 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number40 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="calendar-day-number41 calendar-day-number"></div>
+                </div>
+                <div class="calendar-day last-line-last-row">
+                    <div class="calendar-day-number42 calendar-day-number"></div>
+                </div>
+            </div>
+        </section>
+        <script>
+            function convertToMonthName(arrayMonth){
+                switch(arrayMonth){
+                        case 01:
+                        return 'Janeiro';
+                        break;
+                        case 02:
+                        return 'Fevereiro';
+                        break;
+                        case 03:
+                        return 'Março';
+                        break;
+                        case 04:
+                        return 'Abril';
+                        break;
+                        case 05:
+                        return 'Maio';
+                        break;
+                        case 06:
+                        return 'Junho';
+                        break;
+                        case 07:
+                        return 'Julho';
+                        break;
+                        case 08:
+                        return 'Agosto';
+                        break;
+                        case 09:
+                        return 'Setembro';
+                        break;
+                        case 10:
+                        return 'Outubro';
+                        break;
+                        case 11:
+                        return 'Novembro';
+                        break;
+                        case 12:
+                        return 'Dezembro';
+                        break;
+
+                }
+            }
+
+            function ChangeDateResult(value){
+                var str = value;
+                var splitvalue = str.split('-', 2);
+                var arrayYear = splitvalue.slice(0, 1);
+                arrayMonth = splitvalue.slice(1, 2);
+                arrayMonth = parseInt(arrayMonth);
+
+                convertToMonthName(arrayMonth);
+            
+                var today = new Date();
+                var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+                document.querySelector('.result').innerHTML = " Você escolheu a seguinte data:  " + arrayYear + " de " + convertToMonthName(arrayMonth) + " às " + time;
+
+                document.querySelector('.days-month').innerHTML = "Esse mês possui " + daysInMonth(arrayMonth, arrayYear) + " dias.";
+
+                var dateofweekchoosen = dayOfWeek(arrayMonth, arrayYear);
+                var daysincurrentmonth = daysInMonth(arrayMonth, arrayYear);
+
+                document.querySelector('.section-calendar').classList.remove('invisible');
+
+                clearCalendar();
+                alterCalendar(dateofweekchoosen, daysincurrentmonth);
+            }
+                      
+
+            function daysInMonth(arrayMonth, arrayYear){
+                return new Date(arrayYear, arrayMonth, 0).getDate();
+            }
+            
+            function dayOfWeek(arrayMonth, arrayYear){
+                return new Date(arrayYear, arrayMonth-1, 1).getDay();
+            }
+
+            function alterCalendar(dateofweekchoosen, daysincurrentmonth){
+                for(day = 1, i = dateofweekchoosen + 1; day <= daysincurrentmonth; i++, day++){
+                    document.querySelector('.calendar-day-number' + i).classList.remove('invisible');
+                    document.querySelector('.calendar-day-number' + i).innerHTML = " " + day;
+                    document.querySelector('.calendar-day-number' + i).parentNode.classList.remove('gray-background');
+                }
+
+                document.querySelector('.calendar-title').innerHTML = convertToMonthName(arrayMonth);
+                }
+
+            function clearCalendar(){
+                for(i = 1; i<= 42; i++){
+                    document.querySelector('.calendar-day-number' + i).innerHTML = "";
+                    document.querySelector('.calendar-day-number' + i).parentNode.classList.add('gray-background');
+                    document.querySelector('.calendar-day-number' + i).classList.add('invisible');
+                }
+
+            }
+
+        </script>
+    </body>
+</html>
