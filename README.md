@@ -1,7 +1,7 @@
 # vanilla-javascript-calendar-demo
 
 
-## Part 1
+## Part 1 ✔️
 Input month/year and count of number of days.
 
 ## Part 2 Code review
