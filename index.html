@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Logica de Programação Javascript</title>
+        <title> Simple Calendar</title>
         <meta charset="utf-8">
         <meta name="Author" content="José Pedro">
         <meta name="Description" content="conteudo, inicio">
@@ -10,42 +10,42 @@
     </head>
     <body>
         <header>
-            <h1>Calendário Simples</h1>
+            <h1>Simple Calendar</h1>
             <p class="name-creator">by: <a href="https://github.com/jspedrovicente">José Vicente :)</a></p>
             
         </header>
         <div class="form-year-month">
-                <label for="start">Escolha o ano e o mês:</label>
+                <label for="start">Choose the Month and Year:</label>
                 <form>
                 <input type="month" id="start" name="start"
-                 min="1990-03" value="2022-01" onchange=ChangeDateResult(value)>
+                 min="1990-03" value="2022-01" onchange=createCalendar(value)>
             
         </div>
 
         <section class="section-info">   
             <p class= "result">
-                Para começar, basta escolher um Ano e um Mês =)
+                To start, simply choose your date above! =)
             </p>
             <p class="days-month">
-            **ANDA LOGO**
+                **MAKE IT QUICK!**
             </p>
         </section>
         
-        <section class= "section-calendar invisible">
+        <section id="section-calendar" class= "section-calendar invisible">
 
-            <div class="calendar-title">Janeiro</div>
+            <div class="calendar-title"></div>
             <div class="calendar-week">
-                <div class="calendar-week-days">Domingo</div>
-                <div class="calendar-week-days">Segunda</div>
-                <div class="calendar-week-days">Terça</div>
-                <div class="calendar-week-days">Quarta</div>
-                <div class="calendar-week-days">Quinta</div>
-                <div class="calendar-week-days">Sexta</div>
-                <div class="calendar-week-days">Sabado</div>
+                <div class="calendar-week-days">Sunday</div>
+                <div class="calendar-week-days">Monday</div>
+                <div class="calendar-week-days">Tuesday</div>
+                <div class="calendar-week-days">Wednesday</div>
+                <div class="calendar-week-days">Thursday</div>
+                <div class="calendar-week-days">Friday</div>
+                <div class="calendar-week-days">Saturday</div>
 
             </div>
-            <div class="calendar-wrap">
-                <div class="calendar-day first-row">
+            <div id= "calendar-wrap" class="calendar-wrap">
+                <div id="calendar-day" class="calendar-day first-row">
                     <div class="calendar-day-number1 calendar-day-number"></div>
                 </div>
                 <div class="calendar-day">                    
@@ -174,97 +174,83 @@
             </div>
         </section>
         <script>
-            function convertToMonthName(arrayMonth){
-                switch(arrayMonth){
-                        case 01:
-                        return 'Janeiro';
-                        break;
-                        case 02:
-                        return 'Fevereiro';
-                        break;
-                        case 03:
-                        return 'Março';
-                        break;
-                        case 04:
-                        return 'Abril';
-                        break;
-                        case 05:
-                        return 'Maio';
-                        break;
-                        case 06:
-                        return 'Junho';
-                        break;
-                        case 07:
-                        return 'Julho';
-                        break;
-                        case 08:
-                        return 'Agosto';
-                        break;
-                        case 09:
-                        return 'Setembro';
-                        break;
-                        case 10:
-                        return 'Outubro';
-                        break;
-                        case 11:
-                        return 'Novembro';
-                        break;
-                        case 12:
-                        return 'Dezembro';
-                        break;
-
+            function convertMonthNumbertoString(arrayYear, arrayMonth){
+                const date = new Date(arrayYear, arrayMonth-1, 1);
+                const month = date.toLocaleString('en-us', { month: 'long' });
+                return month;
                 }
-            }
+            
 
-            function ChangeDateResult(value){
-                var str = value;
-                var splitvalue = str.split('-', 2);
-                var arrayYear = splitvalue.slice(0, 1);
-                arrayMonth = splitvalue.slice(1, 2);
+            // function cloneTemplate(){
+
+            //     const section = document.getElementById('section-calendar');
+            //     const sectionclone = section.cloneNode(true);
+            //     sectionclone.id = 'section-clone';
+            //     document.body.appendChild(sectionclone);
+
+            //     const wrap = document.getElementById('calendar-wrap');
+            //     const wrapclone = wrap.cloneNode(false);
+            //     wrapclone.id = 'wrap-clone';
+            //     document.getElementById('section-clone').appendChild(wrapclone);
+                
+            //     for(i = 1; i<42; i++){
+            //         const item = document.getElementById('calendar-day');
+            //         const clone = item.cloneNode(false);
+            //         clone.id = 'calendar-day' + i;
+            //         clone.classList = 'calendar-day';
+            //         document.getElementById('wrap-clone').appendChild(clone);
+            //     }
+            // }
+
+
+            function createCalendar(fulldate){
+                var str = fulldate;
+                var splitdate = str.split('-', 2);
+                arrayYear = splitdate.slice(0, 1);
+                arrayMonth = splitdate.slice(1, 2);
                 arrayMonth = parseInt(arrayMonth);
 
-                convertToMonthName(arrayMonth);
-            
                 var today = new Date();
                 var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
-                document.querySelector('.result').innerHTML = " Você escolheu a seguinte data:  " + arrayYear + " de " + convertToMonthName(arrayMonth) + " às " + time;
+                document.querySelector('.result').innerHTML = `You have choosen: ${arrayYear} of ${convertMonthNumbertoString(arrayYear, arrayMonth)} at ${time}`;
 
-                document.querySelector('.days-month').innerHTML = "Esse mês possui " + daysInMonth(arrayMonth, arrayYear) + " dias.";
+                document.querySelector('.days-month').innerHTML = `This month contains: ${amountofDaysInMonth(arrayMonth, arrayYear)} days.`;
 
-                var dateofweekchoosen = dayOfWeek(arrayMonth, arrayYear);
-                var daysincurrentmonth = daysInMonth(arrayMonth, arrayYear);
+                var currentdayofweek = currentDayOfWeek(arrayMonth, arrayYear);
+                var amountofdaysinmonth = amountofDaysInMonth(arrayMonth, arrayYear);
 
                 document.querySelector('.section-calendar').classList.remove('invisible');
-
+                // cloneTemplate();
                 clearCalendar();
-                alterCalendar(dateofweekchoosen, daysincurrentmonth);
+                alterCalendar(currentdayofweek, amountofdaysinmonth);
             }
-                      
 
-            function daysInMonth(arrayMonth, arrayYear){
+            function amountofDaysInMonth(arrayMonth, arrayYear){
                 return new Date(arrayYear, arrayMonth, 0).getDate();
             }
             
-            function dayOfWeek(arrayMonth, arrayYear){
+            function currentDayOfWeek(arrayMonth, arrayYear){
                 return new Date(arrayYear, arrayMonth-1, 1).getDay();
             }
 
-            function alterCalendar(dateofweekchoosen, daysincurrentmonth){
-                for(day = 1, i = dateofweekchoosen + 1; day <= daysincurrentmonth; i++, day++){
-                    document.querySelector('.calendar-day-number' + i).classList.remove('invisible');
-                    document.querySelector('.calendar-day-number' + i).innerHTML = " " + day;
-                    document.querySelector('.calendar-day-number' + i).parentNode.classList.remove('gray-background');
+            function alterCalendar(currentdayofweek, amountofdaysinmonth){
+                for(day = 1, i = currentdayofweek + 1; day <= amountofdaysinmonth; i++, day++){
+                    var determinedDate = document.querySelector('.calendar-day-number' + i);
+                    determinedDate.classList.remove('invisible');
+                    determinedDate.innerHTML = " " + day;
+                    determinedDate.parentNode.classList.remove('gray-background');
                 }
 
-                document.querySelector('.calendar-title').innerHTML = convertToMonthName(arrayMonth);
+                document.querySelector('.calendar-title').innerHTML = convertMonthNumbertoString(arrayYear, arrayMonth);
                 }
 
             function clearCalendar(){
                 for(i = 1; i<= 42; i++){
-                    document.querySelector('.calendar-day-number' + i).innerHTML = "";
-                    document.querySelector('.calendar-day-number' + i).parentNode.classList.add('gray-background');
-                    document.querySelector('.calendar-day-number' + i).classList.add('invisible');
+                    var determinedDate = document.querySelector('.calendar-day-number' + i);
+                    determinedDate.classList.add('invisible');
+                    determinedDate.parentNode.classList.add('gray-background');
+                    determinedDate.innerHTML = "";
                 }
 
             }
