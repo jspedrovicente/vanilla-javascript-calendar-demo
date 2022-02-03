@@ -31,9 +31,13 @@
             </p>
         </section>
         
+        <div id="calendar-day" class="calendar-day hidden">
+            <div id="calendar-day-number" class="calendar-day-number"></div>
+        </div>
+
         <section id="section-calendar" class= "section-calendar invisible">
 
-            <div class="calendar-title"></div>
+            <div class="calendar-title">Filler</div>
             <div class="calendar-week">
                 <div class="calendar-week-days">Sunday</div>
                 <div class="calendar-week-days">Monday</div>
@@ -42,166 +46,41 @@
                 <div class="calendar-week-days">Thursday</div>
                 <div class="calendar-week-days">Friday</div>
                 <div class="calendar-week-days">Saturday</div>
-
             </div>
             <div id= "calendar-wrap" class="calendar-wrap">
-                <div id="calendar-day" class="calendar-day first-row">
-                    <div class="calendar-day-number1 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">                    
-                    <div class="calendar-day-number2 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number3 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number4 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number5 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number6 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number7 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day first-row">
-                    <div class="calendar-day-number8 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number9 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number10 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number11 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number12 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number13 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number14 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day first-row">
-                    <div class="calendar-day-number15 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number16 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number17 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number18 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number19 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number20 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number21 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day first-row">
-                    <div class="calendar-day-number22 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number23 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number24 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number25 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number26 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number27 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number28 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day first-row">
-                    <div class="calendar-day-number29 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number30 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number31 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number32 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number33 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number34 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number35 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day first-row last-line-first-row">
-                    <div class="calendar-day-number36 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number37 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number38 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number39 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number40 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day">
-                    <div class="calendar-day-number41 calendar-day-number"></div>
-                </div>
-                <div class="calendar-day last-line-last-row">
-                    <div class="calendar-day-number42 calendar-day-number"></div>
-                </div>
             </div>
         </section>
         <script>
+
             function convertMonthNumbertoString(arrayYear, arrayMonth){
                 const date = new Date(arrayYear, arrayMonth-1, 1);
                 const month = date.toLocaleString('en-us', { month: 'long' });
                 return month;
-                }
+            }
             
+            
+            let executedClone = false;
+            function cloneTemplate(){
 
-            // function cloneTemplate(){
+                for(i = 1; i<43; i++){
+                    const calendardaytemplate = document.getElementById('calendar-day');
+                    const clone = calendardaytemplate.cloneNode(false);
+                    clone.classList = 'calendar-day';
+                    clone.id = 'calendar-day' + i;
+                    document.getElementById('calendar-wrap').appendChild(clone);
 
-            //     const section = document.getElementById('section-calendar');
-            //     const sectionclone = section.cloneNode(true);
-            //     sectionclone.id = 'section-clone';
-            //     document.body.appendChild(sectionclone);
+                    const calendardaynumbertemplate = document.getElementById('calendar-day-number');
+                    const numberclone = calendardaynumbertemplate.cloneNode(false);
+                    numberclone.id = 'calendar-day-number' + i;
+                    document.getElementById('calendar-day' + i).appendChild(numberclone);
 
-            //     const wrap = document.getElementById('calendar-wrap');
-            //     const wrapclone = wrap.cloneNode(false);
-            //     wrapclone.id = 'wrap-clone';
-            //     document.getElementById('section-clone').appendChild(wrapclone);
-                
-            //     for(i = 1; i<42; i++){
-            //         const item = document.getElementById('calendar-day');
-            //         const clone = item.cloneNode(false);
-            //         clone.id = 'calendar-day' + i;
-            //         clone.classList = 'calendar-day';
-            //         document.getElementById('wrap-clone').appendChild(clone);
-            //     }
-            // }
-
+                    
+                }
+                executedClone = true;
+            }
+            function cloneTemplateOnce(){
+                if (!executedClone) cloneTemplate();
+            }
 
             function createCalendar(fulldate){
                 var str = fulldate;
@@ -221,7 +100,9 @@
                 var amountofdaysinmonth = amountofDaysInMonth(arrayMonth, arrayYear);
 
                 document.querySelector('.section-calendar').classList.remove('invisible');
-                // cloneTemplate();
+
+
+                cloneTemplateOnce();
                 clearCalendar();
                 alterCalendar(currentdayofweek, amountofdaysinmonth);
             }
@@ -236,7 +117,7 @@
 
             function alterCalendar(currentdayofweek, amountofdaysinmonth){
                 for(day = 1, i = currentdayofweek + 1; day <= amountofdaysinmonth; i++, day++){
-                    var determinedDate = document.querySelector('.calendar-day-number' + i);
+                    var determinedDate = document.getElementById('calendar-day-number' + i);
                     determinedDate.classList.remove('invisible');
                     determinedDate.innerHTML = " " + day;
                     determinedDate.parentNode.classList.remove('gray-background');
@@ -246,15 +127,14 @@
                 }
 
             function clearCalendar(){
-                for(i = 1; i<= 42; i++){
-                    var determinedDate = document.querySelector('.calendar-day-number' + i);
+                for(i = 1; i< 43; i++){
+                    var determinedDate = document.getElementById('calendar-day-number' + i);
                     determinedDate.classList.add('invisible');
                     determinedDate.parentNode.classList.add('gray-background');
                     determinedDate.innerHTML = "";
                 }
 
             }
-
         </script>
     </body>
 </html>

@@ -7,21 +7,21 @@ Input month/year and count of number of days.
 ## Part 2 Code review
 * Add basic read.
 * Place github icon next to smily face. (BONUS)
-* Translate to english :D
-* All functions should be camelCase: "first letter is not capital"
-* Review function names and add description if needed
+* Translate to english :D ✔️
+* All functions should be camelCase: "first letter is not capital" ✔️
+* Review function names and add description if needed✔️
     * convertToMonthName
-* Use `Name: ${name}` instead of "Name: " + name (BONUS)
-* Assign variables to avoid long lines of code (example line 231)
-* Rename 'dayOfWeek' to something like 'firstWeekdayOfMonth'
-* Use more verbose variable/functions names, do not abreviate example (daysInMonth could be numberOfDaysInMonth)
-* Refactor "convertToMonthName" using this as example:
+* Use `Name: ${name}` instead of "Name: " + name (BONUS) ✔️
+* Assign variables to avoid long lines of code (example line 231)✔️
+* Rename 'dayOfWeek' to something like 'firstWeekdayOfMonth'✔️
+* Use more verbose variable/functions names, do not abreviate example (daysInMonth could be numberOfDaysInMonth)✔️
+* Refactor "convertToMonthName" using this as example:✔️
 ```
-    const date = new Date(2000, arrayMonth, 1);
+    const date = new Date(arrayYear, arrayMonth, 1);
     const month = date.toLocaleString('default', { month: 'long' });
 ```
 
-* Instead of adding '.first-row', '.last-line-first-row', '.last-line-last-row' to certain calendar day blocks use :nth-child, here is an example:
+* Instead of adding '.first-row', '.last-line-first-row', '.last-line-last-row' to certain calendar day blocks use :nth-child, here is an example:✔️
 ```
 .calendar-day{
     border-right: solid 1px black;
@@ -34,7 +34,7 @@ Input month/year and count of number of days.
 
 ```
 
-* Use javascript loops to add html for each date instead of manual html.
+* Use javascript loops to add html for each date instead of manual html. ✔️
 
 ## Part 3
 

@@ -100,17 +100,16 @@ label{
 .first-row{
     border-left: solid 1px black;
 }
-
-.last-line-first-row{
-    border-bottom-left-radius: 25px;
-
+.calendar-day:nth-child(7n +1 ) {
+    border-left: solid 1px black;
 }
-.last-line-last-row{
-    border-bottom-right-radius: 25px;
-}
+
 .gray-background{
     background-color: rgb(185, 185, 185);
 }
 .invisible{
     visibility:hidden;
+}
+.hidden{
+    display: none;
 }
