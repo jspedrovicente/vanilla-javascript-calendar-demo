@@ -5,10 +5,11 @@
         <meta charset="utf-8">
         <meta name="Author" content="José Pedro">
         <meta name="Description" content="conteudo, inicio">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
         <link href="./style.css" rel="stylesheet">
     </head>
     <body>
+        
         <header>
             <h1>Simple Calendar</h1>
             <p class="name-creator">by: <a href="https://github.com/jspedrovicente">José Vicente :)</a></p>
@@ -31,7 +32,7 @@
             </p>
         </section>
         
-        <div id="calendar-day" class="calendar-day hidden">
+        <div id="calendar-day" class="calendar-day invisible" onclick=openModal()>
             <div id="calendar-day-number" class="calendar-day-number"></div>
         </div>
 
@@ -50,6 +51,23 @@
             <div id= "calendar-wrap" class="calendar-wrap">
             </div>
         </section>
+
+        <div class="modal-background invisible" onclick="closeModal()">
+            <div class="modal" onclick="event.stopPropagation()">
+                <div class="modal-header ">
+                    <h3>Details for Date</h3>
+                    <div class="header-close-button" onclick="closeModal()">X</div>
+                </div>
+                <div class="modal-body">
+                    <textarea rows="6" cols="60"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <div class="modal-footer-close">
+                        <div class="modal-footer-close-button" onclick="closeModal()">Close</div>
+                    </div>
+                </div>
+            </div>
+            </div>
         <script>
 
             function convertMonthNumbertoString(arrayYear, arrayMonth){
@@ -57,8 +75,7 @@
                 const month = date.toLocaleString('en-us', { month: 'long' });
                 return month;
             }
-            
-            
+                        
             let executedClone = false;
             function cloneTemplate(){
 
@@ -135,6 +152,16 @@
                 }
 
             }
+
+            function openModal(){
+                var modal = document.querySelector('.modal-background');
+                modal.classList.remove('invisible');
+            }
+            function closeModal(){
+                var modal = document.querySelector('.modal-background');
+                modal.classList.add('invisible');
+            }
+
         </script>
     </body>
 </html>

@@ -1,12 +1,12 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
 body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-header{
-    margin: 20px 0 0 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .name-creator{
     font-size: 9px;
@@ -49,7 +49,6 @@ label{
 }
 .section-calendar{
     width: 80%;
-
 }
 
 .section-info{
@@ -64,8 +63,6 @@ label{
 .result{
     width: 80%;
     margin: 5px;
-
-
 }
 
 .calendar-week-days{
@@ -92,9 +89,19 @@ label{
     
 
 }
+.gray-background{
+    background-color: rgb(185, 185, 185);
+    
+}
 .calendar-day{
     border-right: solid 1px black;
     border-bottom: solid 1px black;
+
+}
+.calendar-day:hover{
+    transition: background-color 1s ease-out;
+    background-color: rgb(174, 174, 241);
+    cursor: pointer;
 
 }
 .first-row{
@@ -104,12 +111,84 @@ label{
     border-left: solid 1px black;
 }
 
-.gray-background{
-    background-color: rgb(185, 185, 185);
-}
 .invisible{
-    visibility:hidden;
-}
-.hidden{
     display: none;
+}
+.modal-background{
+    background:rgba(177, 173, 173, 0.445);
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+}
+
+.modal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: black solid 1px;
+    border-radius: 20px;
+    width: 600px;
+    background-color: rgb(255, 255, 255);
+    height:max-content;
+    position: fixed;
+    top: 40%;
+    left: 35%;
+    
+}
+
+.modal-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    border-bottom: 1.5px rgb(163, 162, 162) solid ;
+
+    
+}
+.modal-header h3{
+    margin-right: 28%;
+    font-size: 20px;
+}
+
+.header-close-button{
+    font-size: 25px;
+    margin: 15px;
+    color: rgb(95, 93, 93);
+}
+.header-close-button:hover{
+    cursor: pointer;
+    color: rgb(26, 25, 25);
+    transition: color 1s ease;
+}
+.modal-body{
+    min-width: 80%;
+
+}
+textarea{
+    margin-top: 20px;
+    resize: none;
+}
+.modal-footer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    border-top: 1px gray solid;
+    margin: 20px 0 0 0;
+}
+.modal-footer-close{
+    margin: 10px 25px 10px 0;
+}
+.modal-footer-close-button{
+    border: 1px rgb(216, 20, 20) solid;
+    padding: 10px 15px;
+    background-color: rgb(216, 20, 20);
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+}
+.modal-footer-close-button:hover{
+    cursor: pointer;
+    background-color: rgb(255, 24, 24);
+    transition: background-color 1s ease;
 }
